@@ -20,16 +20,18 @@ def count_tls_handshakes(filename):
             except:
                 continue
 
-    if len(time_stamps) == 0:
-        return 0, 0
-    duration = time_stamps[-1] - time_stamps[0]
-    return len(time_stamps), duration
+    if len(time_stamps) < 0:
+        return len(time_stamps), 1
+
+    time_stamps.sort()
+    duration = max(time_stamps) - min(time_stamps)
+    return len(time_stamps), duration if duration > 0 else 1
 
 chrome_handshakes, chrome_duration = count_tls_handshakes(chrome_file)
 firefox_handshakes, firefox_duration = count_tls_handshakes(firefox_file)
 
-chrome_handshakes_per_sec = chrome_handshakes / chrome_duration
-firefox_handshakes_per_sec = firefox_handshakes / firefox_duration
+chrome_handshakes_per_sec = chrome_handshakes / max(chrome_duration ,1)
+firefox_handshakes_per_sec = firefox_handshakes / max(firefox_duration  ,1)
 
 apps = ['Chrome', 'Firefox']
 rates = [chrome_handshakes_per_sec, firefox_handshakes_per_sec]

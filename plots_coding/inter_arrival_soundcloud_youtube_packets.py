@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import matplotlib
+
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,6 +11,7 @@ DATA = os.path.join(BASE, '../data')
 
 soundcloud_file = os.path.join(DATA, 'soundcloud_times.txt')
 youtube_file = os.path.join(DATA, 'youtube_times.txt')
+
 
 def inter_arrival_times(filename):
     times = []
@@ -24,18 +26,18 @@ def inter_arrival_times(filename):
                 continue
     return np.array(times)
 
+
 def plot():
     soundcloud_times = inter_arrival_times(soundcloud_file)
     youtube_times = inter_arrival_times(youtube_file)
     plt.figure(figsize=(10, 6))
-    sns.histplot(soundcloud_times, color='orange', label='Soundcloud')
-    sns.histplot(youtube_times, color='red', label='Youtube')
+    sns.histplot(soundcloud_times, color='orange', bins=20, label='Soundcloud', stat='density')
+    sns.histplot(youtube_times, color='red', bins=20, label='Youtube', stat='density')
     plt.xscale('log')
     plt.xlabel('Inter-arrival times (s) in log scaling')
     plt.ylabel('Frequency')
     plt.title('Inter-arrival times of Soundcloud and Youtube packets')
-    plt.legend()\
-
+    plt.legend()
     plt.show()
 
 
