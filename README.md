@@ -37,7 +37,7 @@ Future Work:
 2. Investigate more deeply about countermeasures to prevent attackers from determining the application type.
 
 Authors:
-1. Rei Shaul ,  Ron  , Lior Fikhman , Idan Shumski from the Department of Computer Science in Ariel University 
+1. Rei Shaul ,  Ron Avraham , Lior Fikhman , Idan Shumski from the Department of Computer Science in Ariel University 
     as part of the course "Communication Networks"
 
 License:
