@@ -8,7 +8,7 @@ Key Objectives:
 Capture and analyze network traffic during web browsing, video streaming, audio streaming, and video conferencing
 activities.
 Extract relevant features from packet captures that include IP/TCP/TLS header fields, packet sizes, inter-arrival times,
-flow sizes flow volumes etc.
+flow sizes flow volumes and more , and we making the plots based on extracted txt files. 
 
 Use machine learning models (Random Forest) to classify network flows for enabling application type identification.
 
