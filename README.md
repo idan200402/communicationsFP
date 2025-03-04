@@ -1,4 +1,4 @@
-NetWork TRaffic Analysis and Classification using Machine Learning
+NetWork Traffic Analysis and Classification using Machine Learning
 ===============================================================
 This project deals with capturing and classifying network traffic from various applications with Wireshark and with machine
 learning. The main goal is to determine the application types from their network flow patterns and
