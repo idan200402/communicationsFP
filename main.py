@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-PLOTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plots_coding')
+PLOTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
 SCRIPTS = {
     "1": "inter_arrival_soundcloud_youtube_packets.py",
     "2": "packet_sizes_soundcloud_youtube.py",
@@ -31,8 +31,10 @@ def display_menu():
         print("5 - TTL Distribution (YouTube & Zoom)")
         print("6 - Window Size Analysis (YouTube & SoundCloud)")
         print("7 - UDP Packet Rate (Zoom)")
-        print("8 - Run All (not recommended)")
+        print(
+            "8 - Run All (not recommended , but if you do it: you have you close each graph manually to see the next one)")
         print("9 - Exit Program")
+        print("10 - download dataset and run ML.py")
         choice = input("Enter your choice: ")
 
         if choice == "9":
@@ -41,6 +43,8 @@ def display_menu():
         elif choice == "8":
             for script in SCRIPTS.values():
                 run_code(script)
+        elif choice == "10":
+            run_code("ML.py")
         elif choice in SCRIPTS:
             run_code(SCRIPTS[choice])
         else:
