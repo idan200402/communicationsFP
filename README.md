@@ -23,8 +23,9 @@ the following libraries: pandas, numpy, scikit-learn, matplotlib, seaborn and gd
 How to run The Project:
 1. Clone the repository or download the zip file.
 2. Open it in of your favorite IDE or text editor.
-3. Run the `main.py` file.
-4. 1-8 is about displaying the plots ,  9 is about closing the program and 10 is about downloading the dataset and 
+3. install manually:  sudo apt update && sudo apt install python3-tk
+4. Run the `main.py` file.
+5. 1-8 is about displaying the plots ,  9 is about closing the program and 10 is about downloading the dataset and 
     training the model.
 
 
